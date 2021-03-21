@@ -15,6 +15,14 @@ public class UsualPerson implements Person {
 
     private List<String> contacts;
 
+    public UsualPerson() {
+    }
+
+    public UsualPerson(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     public void setIsProgrammer(boolean isProgrammer) {
         this.isProgrammer = isProgrammer;
     }
@@ -38,10 +46,12 @@ public class UsualPerson implements Person {
     public void sayHello(Person person) {
     }
 
+    @Override
     public Country getCountry() {
         return country;
     }
 
+    @Override
     public void setCountry(Country country) {
         this.country = country;
     }

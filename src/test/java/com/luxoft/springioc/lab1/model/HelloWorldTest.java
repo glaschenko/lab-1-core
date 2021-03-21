@@ -27,10 +27,17 @@ public class HelloWorldTest {
 	@Test
 	public void testInitPerson() {
 		UsualPerson person = (UsualPerson) context.getBean("person", Person.class);
-
+		assertNotNull(person.getCountry());
 		System.out.println("-->" + person.getCountry().getA());
-//		assertEquals(expectedPerson, person);
-//		System.out.println(person);
+		assertEquals(expectedPerson, person);
+		System.out.println(person);
+	}
+
+	@Test
+	public void testInitPersonCountryByName() {
+		UsualPerson person = (UsualPerson) context.getBean("personByName", Person.class);
+		assertNotNull(person.getCountry());
+		assertEquals(expectedPerson, person);
 	}
 
 	private UsualPerson getExpectedPerson() {
